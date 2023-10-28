@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8788990585014852683}
-  - component: {fileID: 7391418036361311542}
+  - component: {fileID: 4400848645261662664}
+  - component: {fileID: 4609591162371510483}
   - component: {fileID: 6079514437915929263}
   - component: {fileID: 6089877391778454043}
   - component: {fileID: 4967179546042334810}
@@ -41,27 +42,31 @@ Transform:
   - {fileID: 2842616757814615115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7391418036361311542
-Animator:
-  serializedVersion: 5
+--- !u!114 &4400848645261662664
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487316235876971509}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06ce3e768923e8847b3fef72c7258239, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa40c21b0d3e12438ffa374f799bd1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 150
+--- !u!114 &4609591162371510483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487316235876971509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3f78107b045664fbb076fd55f113de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6079514437915929263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40841687c5a12484ab15466d0156a72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 0}
   pop: 0
   pol: 0
   heat: 0
@@ -106,6 +112,7 @@ MonoBehaviour:
   HeatImage: {fileID: 0}
   WaterImage: {fileID: 0}
   FoodImage: {fileID: 0}
+  waterObject: {fileID: 0}
   buildings:
   - {fileID: 663736346206581929}
   - {fileID: 5909698292874044095}
@@ -125,20 +132,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventObject: {fileID: 0}
-  posButton: {fileID: 0}
-  negButton: {fileID: 0}
   accidents:
-  - METEOR
-  - YILDIRIM
-  - KAR
+  - aliens from another galaxy!
+  - huge earthquake on the way!
+  - volcano eruption!
+  - tsunami is coming
+  - 'the vampire country attacking to werrwols country '
+  - new element discovered
+  - celebrate the 100th anniversary
+  - people want to build factory
+  - people want to build production factory
+  - cows are dying out
   positiveResponses:
-  - kamp kurun
-  - agaclari kes
-  - isitici dagit
+  - attack them
+  - invest in buildings
+  - save the people
+  - build a set
+  - calm them
+  - help them for the other elements
+  - celebrate
+  - give them money
+  - give them unique items
+  - give straw to farmer
   negativeResponses:
-  - insanlarin olmesine goz yum
-  - agac ek
-  - daha fazla vergi al
+  - close your eyes and watch how they will loot us
+  - It's fate, we can't do anything
+  - leave them
+  - don't
+  - make them fight
+  - don't listen to scientists
+  - don't celebrate and then go to saudi
+  - increase taxes
+  - nuke them
+  - take the straw from them
 --- !u!1 &663736346206581929
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,8 +595,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710677, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 94.308815, y: 94.308815, z: 94.308815}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 94.29898, y: 94.29898, z: 94.29898}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8788990585014852683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

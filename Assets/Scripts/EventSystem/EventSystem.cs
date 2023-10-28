@@ -64,13 +64,61 @@ public class EventSystem : MonoBehaviour
         switch (x)
         {
             case 0:
-                _manageProperties.popM = 5;
+                _manageProperties.polM = 3;
+                _manageProperties.waterM = -2;
+                _manageProperties.foodM = -2;
                 break;
             case 1:
-                _manageProperties.popM = 10;
+                _manageProperties.popM = 7;
+                _manageProperties.polM = 2;
+                _manageProperties.waterM = 2;
                 break;
             case 2:
-                _manageProperties.popM = 15;
+                _manageProperties.polM = 3;
+                _manageProperties.waterM = -2;
+                _manageProperties.foodM = -2;
+                break;
+            case 3:
+                _manageProperties.polM = 2;
+                _manageProperties.heatM = 2;
+                break;
+            case 4:
+                _manageProperties.popM = 5;
+                _manageProperties.foodM = 5;
+                _manageProperties.waterM = 5;
+                _manageProperties.polM = -5;
+                break;
+            case 5:
+                _manageProperties.popM = 5;
+                _manageProperties.polM = -5;
+                _manageProperties.foodM = -1;
+                _manageProperties.waterM = -1;
+                break;
+            case 6:
+                _manageProperties.popM = 2;
+                _manageProperties.polM = 2;
+                _manageProperties.heatM = 1;
+                _manageProperties.waterM = -3;
+                _manageProperties.foodM = -3;
+                break;
+            case 7:
+                _manageProperties.popM = 3;
+                _manageProperties.polM = 10;
+                _manageProperties.waterM = 2;
+                _manageProperties.foodM = 2;
+                break;
+            case 8:
+                _manageProperties.popM = 3;
+                _manageProperties.polM = 10;
+                _manageProperties.waterM = 2;
+                _manageProperties.foodM = 2;
+                break;
+            case 9:
+                _manageProperties.popM = 3;
+                _manageProperties.foodM = 5;
+                _manageProperties.waterM = 5;
+                _manageProperties.polM = 2;
+                _manageProperties.heatM = 5;
                 break;
         }
 
@@ -85,12 +133,61 @@ public class EventSystem : MonoBehaviour
         {
             case 0:
                 _manageProperties.popM = -5;
+                _manageProperties.polM = -2;
+                _manageProperties.heatM = -1;
                 break;
             case 1:
-                _manageProperties.popM = -10;
+                _manageProperties.popM = -15;
+                _manageProperties.polM = 5;
+                _manageProperties.foodM = 5;
                 break;
             case 2:
-                _manageProperties.popM = -15;
+                _manageProperties.popM = -5;
+                _manageProperties.polM = -2;
+                _manageProperties.foodM = 3;
+                _manageProperties.waterM = -1;
+                break;
+            case 3:
+                _manageProperties.popM = -4;
+                _manageProperties.polM = -2;
+                _manageProperties.heatM = -2;
+                break;
+            case 4:
+                _manageProperties.popM = -5;
+                _manageProperties.foodM = -5;
+                _manageProperties.waterM = -5;
+                _manageProperties.polM = 5;
+                _manageProperties.heatM = 5;
+                break;
+            case 5:
+                _manageProperties.polM = 1;
+                _manageProperties.foodM = 1;
+                _manageProperties.waterM = 1;
+                break;
+            case 6:
+                _manageProperties.popM = -2;
+                _manageProperties.polM = -1;
+                _manageProperties.waterM = 1;
+                _manageProperties.foodM = 1;
+                break;
+            case 7:
+                _manageProperties.popM = -3;
+                _manageProperties.polM = -5;
+                _manageProperties.waterM = -2;
+                _manageProperties.foodM = -2;
+                break;
+            case 8:
+                _manageProperties.popM = -3;
+                _manageProperties.polM = -5;
+                _manageProperties.waterM = -2;
+                _manageProperties.foodM = -2;
+                break;
+            case 9:
+                _manageProperties.popM = -3;
+                _manageProperties.foodM = -5;
+                _manageProperties.waterM = -5;
+                _manageProperties.polM = -2;
+                _manageProperties.heatM = -5;
                 break;
         }
         

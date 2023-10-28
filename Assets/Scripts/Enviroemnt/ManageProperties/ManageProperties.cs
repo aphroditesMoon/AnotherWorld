@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,17 +19,31 @@ public class ManageProperties : MonoBehaviour
     public Slider WaterImage;
     public Slider FoodImage;
 
+    public GameObject waterObject;
+    private Vector3 preScale;
+    private Vector3 newScale;
+
     public GameObject[] buildings;
     
     private float _timer = 0f;
     private float timer = 0f;
-    
+
+    private void Start()
+    {
+        preScale = waterObject.gameObject.transform.localScale;
+    }
+
     private void Update()
     {
         Debug.Log(WorldProperties.Pollution);
         
         _timer += Time.deltaTime;
         timer += Time.deltaTime;
+
+        newScale = new Vector3(preScale.x + WorldProperties.Water + 1f, preScale.y + WorldProperties.Water  + 1f,
+            preScale.z + WorldProperties.Water + 1f);
+
+        waterObject.transform.localScale = newScale;
 
         PopImage.value = WorldProperties.Population;
         PolImage.value = WorldProperties.Pollution;
@@ -44,30 +59,40 @@ public class ManageProperties : MonoBehaviour
     public void Switchs()
     {
         WorldProperties.Population += .1f * popM;
+        string formattedValue0 = WorldProperties.Population.ToString("F0");
+        PopImage.GetComponentInChildren<TextMeshProUGUI>().text = formattedValue0 + "/ 500";
         if (WorldProperties.Population <= 0)
         {
             WorldProperties.Population = 0;
         }
         
-        WorldProperties.Pollution += .0001f * polM;
+        WorldProperties.Pollution += .0005f * polM;
+        string formattedValue1 = WorldProperties.Pollution.ToString("F2");
+        PolImage.GetComponentInChildren<TextMeshProUGUI>().text = formattedValue1 + "/ 5.00";
         if (WorldProperties.Pollution <= 0)
         {
             WorldProperties.Pollution = 0;
         }
         
-        WorldProperties.Heat += .0001f * heatM;
+        WorldProperties.Heat += .0005f * heatM;
+        string formattedValue2 = WorldProperties.Heat.ToString("F2");
+        HeatImage.GetComponentInChildren<TextMeshProUGUI>().text = formattedValue2 + "/ 5.00";
         if (WorldProperties.Heat <= 0)
         {
             WorldProperties.Heat = 0;
         }
         
-        WorldProperties.Water += .0001f * waterM;
+        WorldProperties.Water += .0005f * waterM;
+        string formattedValue3 = WorldProperties.Water.ToString("F2");
+        WaterImage.GetComponentInChildren<TextMeshProUGUI>().text = formattedValue3 + "/ 5.00";
         if (WorldProperties.Water <= 0)
         {
             WorldProperties.Water = 0;
         }
         
-        WorldProperties.Food += .0001f * foodM;
+        WorldProperties.Food += .0005f * foodM;
+        string formattedValue4 = WorldProperties.Food.ToString("F2");
+        FoodImage.GetComponentInChildren<TextMeshProUGUI>().text = formattedValue4 + "/ 10.00";
         if (WorldProperties.Food <= 0)
         {
             WorldProperties.Food = 0;
@@ -78,19 +103,19 @@ public class ManageProperties : MonoBehaviour
     {
         switch (WorldProperties.Population)
         {
-            case 20:
+            case 50:
                 buildings[0].SetActive(true);
                 break;
-            case 50:
+            case 100:
                 buildings[1].SetActive(true);
                 break;
-            case 80:
+            case 200:
                 buildings[2].SetActive(true);
                 break;
-            case 120:
+            case 300:
                 buildings[3].SetActive(true);
                 break;
-            case 150:
+            case 400:
                 buildings[4].SetActive(true);
                 break;
         }
@@ -118,9 +143,9 @@ public class ManageProperties : MonoBehaviour
         if (timer >= 5)
         {
             timer = 0f;
-            foodM = -1 * (int)WorldProperties.Population;
+            foodM = -2;
             polM = -2;
-            heatM = 1;
+            heatM = 1;                                                                                                                                                                                                                                                           
             eventSystem.ResetAllProperties();
         }
 
