@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,9 +17,6 @@ public class EventSystem : MonoBehaviour
     private TextMeshProUGUI _positiveChoice;
     private TextMeshProUGUI _negativeChoice;
 
-    public Button posButton;
-    public Button negButton;
-
     public string[] accidents;
     public string[] positiveResponses;
     public string[] negativeResponses;
@@ -26,6 +24,8 @@ public class EventSystem : MonoBehaviour
     private int x;
 
     private float _eventTimer = 0f;
+    
+    private float timer = 0f;
 
     private void Start()
     {
@@ -39,6 +39,7 @@ public class EventSystem : MonoBehaviour
     private void Update()
     {
         _eventTimer += Time.deltaTime;
+        timer += Time.deltaTime;
         
         EventManage();
     }
@@ -63,15 +64,19 @@ public class EventSystem : MonoBehaviour
         switch (x)
         {
             case 0:
-                _manageProperties.polM = 5;
+                _manageProperties.popM = 5;
                 break;
             case 1:
-                _manageProperties.polM = 10;
+                _manageProperties.popM = 10;
                 break;
             case 2:
-                _manageProperties.polM = 15;
+                _manageProperties.popM = 15;
                 break;
         }
+
+        ResetAllProperties();
+        eventObject.SetActive(false);
+        Time.timeScale = 1f;
     }
     
     public void Neg()
@@ -79,14 +84,28 @@ public class EventSystem : MonoBehaviour
         switch (x)
         {
             case 0:
-                _manageProperties.polM = -5;
+                _manageProperties.popM = -5;
                 break;
             case 1:
-                _manageProperties.polM = -10;
+                _manageProperties.popM = -10;
                 break;
             case 2:
-                _manageProperties.polM = -15;
+                _manageProperties.popM = -15;
                 break;
         }
+        
+        ResetAllProperties();
+        eventObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    
+    public async void ResetAllProperties()
+    {
+        await Task.Delay(1000);
+        _manageProperties.popM = 0;
+        _manageProperties.polM = 0;
+        _manageProperties.heatM = 0;
+        _manageProperties.waterM = 0;
+        _manageProperties.foodM = 0;
     }
 }
