@@ -8,6 +8,8 @@ public class WinLoseCond : MonoBehaviour
     private ManageProperties _manageProperties;
     private EventSystem _eventSystem;
 
+    public GameObject deadScreen;
+
     private void Start()
     {
         _manageProperties = GetComponent<ManageProperties>();
@@ -24,6 +26,11 @@ public class WinLoseCond : MonoBehaviour
         if (WorldProperties.Heat == 5 || WorldProperties.Heat == 0 || WorldProperties.Water == 0 || WorldProperties.Food == 0)
         {
             _manageProperties.popM = -3;
+        }
+
+        if (WorldProperties.Population == 0)
+        {
+            deadScreen.SetActive(true);
         }
     }
 }

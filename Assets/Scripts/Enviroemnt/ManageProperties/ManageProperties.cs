@@ -24,6 +24,7 @@ public class ManageProperties : MonoBehaviour
     private Vector3 newScale;
 
     public GameObject[] buildings;
+    public GameObject[] plants;
     
     private float _timer = 0f;
     private float timer = 0f;
@@ -101,24 +102,37 @@ public class ManageProperties : MonoBehaviour
 
     private void CheckCitySituation()
     {
-        switch (WorldProperties.Population)
+        if (WorldProperties.Population >= 51)
         {
-            case 50:
-                buildings[0].SetActive(true);
-                break;
-            case 100:
-                buildings[1].SetActive(true);
-                break;
-            case 200:
-                buildings[2].SetActive(true);
-                break;
-            case 300:
-                buildings[3].SetActive(true);
-                break;
-            case 400:
-                buildings[4].SetActive(true);
-                break;
+            buildings[0].SetActive(true);
+            plants[0].SetActive(true);
         }
+
+        if (WorldProperties.Population >= 100)
+        {
+            buildings[1].SetActive(true);
+            plants[1].SetActive(true);
+        }
+
+        if (WorldProperties.Population >= 200)
+        {
+            buildings[2].SetActive(true);
+            plants[2].SetActive(true);
+        }
+
+        if (WorldProperties.Population >= 300)
+        {
+            buildings[3].SetActive(true);
+            plants[3].SetActive(true);
+        }
+
+        if (WorldProperties.Population >= 400)
+        {
+            buildings[4].SetActive(true);
+            plants[4].SetActive(true);
+            plants[5].SetActive(true);
+        }
+
     }
 
     private bool x = true, xx = true;

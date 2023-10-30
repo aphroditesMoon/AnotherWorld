@@ -4,5 +4,32 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7348d95be3a4e044d99d22eee60d0949
+  - enabled: 1
+    path: Assets/Scenes/MechanicsProttype.unity
+    guid: 39490942a4808bf4090be6019e3dfd82
+  - enabled: 1
+    path: Assets/Scenes/CandyPlanet.unity
+    guid: 69de77e6a2632894fb89065135ed887c
+  - enabled: 1
+    path: Assets/Scenes/EarthPlanet.unity
+    guid: 8e656ef24c533dc4a9a4c350d1bed458
+  - enabled: 1
+    path: Assets/Scenes/GreenPlanet.unity
+    guid: 69b67a87cf6aa2b4995370e1a15458b4
+  - enabled: 1
+    path: Assets/Scenes/OrangePlanet.unity
+    guid: 60717189991aa614789ed146752c6347
+  - enabled: 1
+    path: Assets/Scenes/PurplePlanet.unity
+    guid: b0ce0dd808c10eb4c8081855f5c4a6a2
+  - enabled: 1
+    path: Assets/Scenes/RobotPlanet.unity
+    guid: bffdff6b6df9a4247b903ae769b8d821
+  - enabled: 1
+    path: Assets/Scenes/WhitePlanet.unity
+    guid: b7549b0be9ba9384b9c6cb50a69c7ef7
   m_configObjects: {}
